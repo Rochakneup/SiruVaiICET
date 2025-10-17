@@ -572,7 +572,7 @@ const WarrantyManagement = () => {
                     
                     {warranty.warranty_card_image && (
                       <img
-                        src={`${IMAGE_BASE}/siruvai/${warranty.warranty_card_image}`}
+                        src={`${API_BASE}/siruvai/${warranty.warranty_card_image}`}
                         alt="Warranty Card"
                         className="w-full h-48 object-cover rounded-lg mb-3 border border-slate-200"
                         onError={(e) => { e.target.style.display = 'none'; }}
