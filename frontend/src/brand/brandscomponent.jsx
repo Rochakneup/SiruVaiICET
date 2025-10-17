@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Plus, Package, Search } from "lucide-react";
 import { API_URL } from "../api.js";
 
-const ADD_URL = (`${API_URL}/brands/add`);
-const GET_URL = (`${API_URL}/brands`);
+const ADD_URL = (`${API_URL}/siruvai/brands/add`);
+const GET_URL = (`${API_URL}/siruvai/brands`);
 
 const BrandManager = () => {
   const [brands, setBrands] = useState([]);
