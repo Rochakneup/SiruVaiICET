@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import * as XLSX from 'xlsx';
 import { API_URL } from "../api.js";
 
-const SALES_ADD_URL = `${API_URL}/sales/add`;
-const SALES_URL = `${API_URL}/sales`;
-const CUSTOMERS_URL = `${API_URL}/customers`;
-const PRODUCTS_URL =  ` ${API_URL}/products`;
+const SALES_ADD_URL = `${API_URL}/siruvai/sales/add`;
+const SALES_URL = `${API_URL}/siruvai/sales`;
+const CUSTOMERS_URL = `${API_URL}/siruvai/customers`;
+const PRODUCTS_URL =  ` ${API_URL}/siruvai/products`;
 
 const SalesComponent = () => {
   const [customers, setCustomers] = useState([]);
