@@ -38,11 +38,11 @@ const Dashboard = () => {
     setLoading(true);
     try {
       const [usersRes, salesRes, productsRes, ticketsRes, customersRes] = await Promise.all([
-        fetch(`${API_URL}/users`),
-        fetch(`${API_URL}/sales`),
-        fetch(`${API_URL}/products`),
-        fetch(`${API_URL}/support/view`),
-        fetch(`${API_URL}/customers`),
+        fetch(`${API_URL}/siruvai/users`),
+        fetch(`${API_URL}/siruvai/sales`),
+        fetch(`${API_URL}/siruvai/products`),
+        fetch(`${API_URL}/siruvai/support/view`),
+        fetch(`${API_URL}/siruvai/customers`),
       ]);
 
       const users = await usersRes.json();
