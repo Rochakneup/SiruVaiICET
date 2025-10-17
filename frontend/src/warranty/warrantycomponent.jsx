@@ -52,7 +52,7 @@ const WarrantyManagement = () => {
   const fetchWarranties = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE}/warranty`);
+      const response = await fetch(`${API_BASE}/siruvai/warranty`);
       if (!response.ok) throw new Error('Failed to fetch warranties');
       const data = await response.json();
       setWarranties(Array.isArray(data) ? data : []);
@@ -65,7 +65,7 @@ const WarrantyManagement = () => {
 
   const fetchCustomers = async () => {
     try {
-      const response = await fetch(`${API_BASE}/customers`);
+      const response = await fetch(`${API_BASE}/siruvai/customers`);
       if (!response.ok) throw new Error('Failed to fetch customers');
       const data = await response.json();
       setCustomers(Array.isArray(data) ? data : []);
@@ -76,7 +76,7 @@ const WarrantyManagement = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch(`${API_BASE}/products`);
+      const response = await fetch(`${API_BASE}/siruvai/products`);
       if (!response.ok) throw new Error('Failed to fetch products');
       const data = await response.json();
       setProducts(Array.isArray(data) ? data : []);
@@ -87,7 +87,7 @@ const WarrantyManagement = () => {
 
   const fetchSales = async () => {
     try {
-      const response = await fetch(`${API_BASE}/sales`);
+      const response = await fetch(`${API_BASE}/siruvai/sales`);
       if (!response.ok) throw new Error('Failed to fetch sales');
       const data = await response.json();
       const salesArray = Array.isArray(data.sales) ? data.sales : [];
@@ -182,7 +182,7 @@ const WarrantyManagement = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE}/warranty/add`, {
+      const response = await fetch(`${API_BASE}/siruvai/warranty/add`, {
         method: 'POST',
         body: submitData
       });
@@ -572,7 +572,7 @@ const WarrantyManagement = () => {
                     
                     {warranty.warranty_card_image && (
                       <img
-                        src={`${IMAGE_BASE}/${warranty.warranty_card_image}`}
+                        src={`${IMAGE_BASE}/siruvai/${warranty.warranty_card_image}`}
                         alt="Warranty Card"
                         className="w-full h-48 object-cover rounded-lg mb-3 border border-slate-200"
                         onError={(e) => { e.target.style.display = 'none'; }}
