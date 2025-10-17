@@ -15,7 +15,8 @@ export const createWarrantyCard = async (req, res) => {
       return res.status(400).json({ error: "Warranty image is required" });
     }
 
-    const warranty_image = req.file.path; // path from multer
+    // ✅ Cloudinary returns a URL in req.file.path
+    const warranty_image = req.file.path;
 
     const newCard = await addWarrantyCard({
       sale_item_id,
@@ -23,7 +24,7 @@ export const createWarrantyCard = async (req, res) => {
       product_id,
       warranty_start_date,
       warranty_end_date,
-      warranty_image,
+      warranty_image, // Cloudinary URL stored in DB
       warranty_card_no,
     });
 

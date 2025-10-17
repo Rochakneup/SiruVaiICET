@@ -572,11 +572,15 @@ const WarrantyManagement = () => {
                     
                     {warranty.warranty_card_image && (
                       <img
-                        src={`${API_BASE}/siruvai/${warranty.warranty_card_image}`}
-                        alt="Warranty Card"
-                        className="w-full h-48 object-cover rounded-lg mb-3 border border-slate-200"
-                        onError={(e) => { e.target.style.display = 'none'; }}
-                      />
+  src={
+    warranty.warranty_card_image?.startsWith("http")
+      ? warranty.warranty_card_image
+      : `${IMAGE_BASE}/${warranty.warranty_card_image}`
+  }
+  alt="Warranty Card"
+  className="w-full h-48 object-cover rounded-lg mb-3 border border-slate-200"
+/>
+
                     )}
                     
                     <div className="space-y-2 text-sm">

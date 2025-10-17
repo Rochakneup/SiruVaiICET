@@ -1,22 +1,30 @@
 import express from "express";
 import multer from "multer";
-import path from "path";
+import { v2 as cloudinary } from "cloudinary";
+import { CloudinaryStorage } from "multer-storage-cloudinary";
 import { createWarrantyCard, listWarrantyCards } from "../controller/warrantycontroller.js";
 
 const router = express.Router();
 
-// Multer setup
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/warranty"); // Make sure folder exists
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname));
+// 🔧 Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+// 📦 Set up Cloudinary storage for multer
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: "siruvai_warranty_cards", // Cloudinary folder name
+    allowed_formats: ["jpg", "png", "jpeg"],
   },
 });
+
 const upload = multer({ storage });
 
-// Routes
+// 📤 Routes
 router.post("/add", upload.single("warranty_image"), createWarrantyCard);
 router.get("/", listWarrantyCards);
 
