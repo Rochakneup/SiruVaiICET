@@ -13,9 +13,7 @@ import authRoutes from "./routes/authrouth.js";
 dotenv.config();
 const app = express();
 
-app.use(cors({
-  origin: "https://frontend-sxv2.onrender.com/"
-}));
+app.use(cors());
 app.use(express.json());
 
 // Routes
