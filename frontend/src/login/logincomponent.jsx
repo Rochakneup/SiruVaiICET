@@ -18,7 +18,7 @@ const Login = ({ onLoginSuccess }) => {
     setLoading(true);
 
     try {
-      const res = await axios.post((`${API_URL}/auth/login`), {
+      const res = await axios.post((`${API_URL}/siruvai/auth/login`), {
         username,
         password,
       });
