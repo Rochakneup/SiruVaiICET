@@ -3,8 +3,8 @@ import { Plus, Users, Search, Mail, Phone, MapPin, User, Download } from "lucide
 import * as XLSX from 'xlsx';
 import { API_URL } from "../api";
 
-const ADD_URL = (`${API_URL}/customers/add`);
-const GET_URL =   (`${API_URL}/customers`);
+const ADD_URL = (`${API_URL}/siruvai/customers/add`);
+const GET_URL =   (`${API_URL}/siruvai/customers`);
 
 const CustomerManager = () => {
   const [customers, setCustomers] = useState([]);
