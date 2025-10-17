@@ -17,7 +17,7 @@ const UsersManager = () => {
   // Fetch all users
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(`${API_URL}/users`);
+      const response = await axios.get(`${API_URL}/siruvai/users`);
       setUsers(response.data);
     } catch (err) {
       console.error("Failed to fetch users:", err);
@@ -46,10 +46,10 @@ const UsersManager = () => {
       if (payload.is_active === undefined) delete payload.is_active;
 
       if (editingUserId) {
-        await axios.put(`${API_URL}/users/${editingUserId}`, payload);
+        await axios.put(`${API_URL}/siruvai/users/${editingUserId}`, payload);
         setEditingUserId(null);
       } else {
-        await axios.post(`${API_URL}/users`, payload);
+        await axios.post(`${API_URL}/siruvai/users`, payload);
       }
 
       setFormData({
@@ -70,7 +70,7 @@ const UsersManager = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      await axios.delete(`${API_URL}/users/${id}`);
+      await axios.delete(`${API_URL}/siruvai/users/${id}`);
       fetchUsers();
     } catch (err) {
       console.error("Failed to delete user:", err);
