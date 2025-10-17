@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Package, Plus, Search, Box, Tag, Hash } from "lucide-react";
 import { API_URL } from "../api.js";
 
-const ADD_URL = `${API_URL}/products/add`;
-const GET_URL = `${API_URL}/products`;
-const BRANDS_URL = ` ${API_URL}/brands`;
+const ADD_URL = `${API_URL}/siruvai/products/add`;
+const GET_URL = `${API_URL}/siruvai/products`;
+const BRANDS_URL = ` ${API_URL}/siruvai/brands`;
 
 const ProductManager = () => {
   const [products, setProducts] = useState([]);
