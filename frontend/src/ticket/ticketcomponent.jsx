@@ -3,11 +3,11 @@ import axios from "axios";
 import{ API_URL } from "../api.js";
 
 const TicketsManager = () => {
-  const API_TICKETS = `${API_URL}/support`;
-  const API_CUSTOMERS =   `${API_URL}/customers`;
-  const API_PRODUCTS = `${API_URL}/products`;
-  const API_USERS = `${API_URL}/users`;
-  const API_SALES = `${API_URL}/sales`;
+  const API_TICKETS = `${API_URL}/siruvai/support`;
+  const API_CUSTOMERS =   `${API_URL}/siruvai/customers`;
+  const API_PRODUCTS = `${API_URL}/siruvai/products`;
+  const API_USERS = `${API_URL}/siruvai/users`;
+  const API_SALES = `${API_URL}/siruvai/sales`;
 
   const [tickets, setTickets] = useState([]);
   const [customers, setCustomers] = useState([]);
